@@ -1,0 +1,57 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/site.css" />
+    <title>LAB2</title>
+</head>
+<body>
+    <h3>Add Car</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addCar()">
+        <input type="number" id="add-price" placeholder="Price Number">
+        <input type="number" id="add-year" placeholder="Year Number">
+        <input type="number" id="add-fuel" placeholder="Fuel Number">
+        <input type="number" id="add-run" placeholder="Run Number">
+        <input type="text" id="add-point" placeholder="Point Text">
+        <input type="number" id="add-brand" placeholder="Brand Number">
+        <input type="text" id="add-model" placeholder="Model Text">
+
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="editForm">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateCar()">
+            <input type="hidden" id="edit-id">
+            <input type="number" id="edit-price">
+            <input type="number" id="edit-year">
+            <input type="number" id="edit-fuel">
+            <input type="number" id="edit-run">
+            <input type="text" id="edit-point">
+            <input type="number" id="edit-brand">
+            <input type="text" id="edit-model">
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>FuelConsumption</th>
+            <th>Point</th>
+            <th>CarRun</th>
+            <th>CarYear</th>
+        </tr>
+        <tbody id="cars"></tbody>
+    </table>
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getCars();
+    </script>
+</body>
+</html>
